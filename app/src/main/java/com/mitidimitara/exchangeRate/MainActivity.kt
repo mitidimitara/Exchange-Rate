@@ -1,4 +1,4 @@
-package com.mitidimitara.myapplication
+package com.mitidimitara.exchangeRate
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.mitidimitara.myapplication.ui.theme.ExchangeRateTheme
+import com.mitidimitara.exchangeRate.ui.theme.ExchangeRateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

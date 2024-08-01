@@ -1,4 +1,4 @@
-package com.mitidimitara.myapplication
+package com.mitidimitara.exchangeRate
 
 import org.junit.Test
 
