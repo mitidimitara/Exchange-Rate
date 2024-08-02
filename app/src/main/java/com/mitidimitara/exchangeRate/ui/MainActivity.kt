@@ -12,10 +12,13 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.mitidimitara.exchangeRate.domain.util.Screen
+import com.mitidimitara.exchangeRate.domain.util.navigation.PairNavType
+import com.mitidimitara.exchangeRate.domain.util.navigation.Screen
 import com.mitidimitara.exchangeRate.ui.chooseCurrencyScreen.ChooseCurrencyScreen
+import com.mitidimitara.exchangeRate.ui.conversionScreen.ConversionScreen
 import com.mitidimitara.exchangeRate.ui.theme.ExchangeRateTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.reflect.typeOf
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -33,6 +36,12 @@ class MainActivity : ComponentActivity() {
                         startDestination = Screen.ChooseCurrency::class
                     ) {
                         composable<Screen.ChooseCurrency> { ChooseCurrencyScreen(navController) }
+                        composable<Screen.Conversion>(
+                            typeMap = mapOf(
+//                                typeOf<Double>() to parcelableType<Double>(),
+                                typeOf<Pair<String, Double>>() to PairNavType
+                            )
+                        ) { ConversionScreen(navController) }
                     }
                 }
             }
