@@ -3,6 +3,7 @@ package com.mitidimitara.exchangeRate.ui.chooseCurrencyScreen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.michaelbull.result.fold
+import com.github.michaelbull.result.get
 import com.mitidimitara.exchangeRate.domain.useCases.GetLatestExchangeRatesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,16 +25,12 @@ class ChooseCurrencyViewModel @Inject constructor(
 
     private fun getLatestExchangeRates() {
         viewModelScope.launch {
-            getLatestExchangeRatesUseCase.invoke("BGN").fold({ response ->
+            getLatestExchangeRatesUseCase.invoke("BGN").get()?.let { response ->
                 _uiState.value = _uiState.value.copy(
                     baseCurrency = response.baseRate,
                     conversionRates = response.conversionRates
                 )
-
-            }, {
-                it
             }
-            )
         }
     }
 }

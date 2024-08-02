@@ -5,7 +5,8 @@ data class ConversionState(
     val fromText: String,
     val amountForConversion: String,
     val conversionRateNormal: String,
-    val conversionRateReversed: String
+    val conversionRateReversed: String,
+    val isConversionDirectionChanged: Boolean = false
 ) {
     companion object {
         const val KEY_TO_CURRENCY = "to"

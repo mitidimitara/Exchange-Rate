@@ -90,7 +90,7 @@ fun ChooseCurrencyScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             Button(onClick = {
-                if (fromCurrency.first.isNotEmpty() && toCurrency.first.isNotEmpty()) {
+                if (fromCurrency.first.isNotEmpty() && toCurrency.first.isNotEmpty() && amount.isNotEmpty()) {
                     navController.navigate(
                         Screen.Conversion(
                             from = fromCurrency,
@@ -98,6 +98,8 @@ fun ChooseCurrencyScreen(
                             amount = amount
                         )
                     )
+                } else {
+                    // Show snackbar for invalid input.
                 }
             }, modifier = Modifier.fillMaxWidth()) {
                 Text("Continue")
