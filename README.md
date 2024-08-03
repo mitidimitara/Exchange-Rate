@@ -73,6 +73,10 @@ The application interacts with the ExchangeRate-API, which provides up-to-date e
 
 1. The main endpoint used is: https://v6.exchangerate-api.com/v6/{API_KEY}/latest/{baseCurrency}
 
-2. Replace {baseCurrency} with the desired currency code (e.g., USD, EUR) or even implement locale logic.
+2. Open the file NetworkModule and edit the API_KEY constant with your unique key (if needed).
 
-3. Refer to the ExchangeRate-API documentation for more details on available endpoints and usage.
+3. Replace {baseCurrency} with the desired currency code (e.g., USD, EUR). Current hardcoded default is BGN.
+
+4. Keep in mind that the free version of this API allows up to 1500 requests per month.
+
+5. Refer to the [documentation](https://www.exchangerate-api.com/docs/overview) for more details on available endpoints and usage.
