@@ -54,7 +54,7 @@ fun ConversionScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             TextField(
-                value = state.amountForConversion,
+                value = state.amountForConversion.let { amount -> if (amount.toDouble() == 0.0) "" else amount },
                 onValueChange = { viewModel.recalculateConversion(it) },
                 keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                 label = { Text("Amount") },

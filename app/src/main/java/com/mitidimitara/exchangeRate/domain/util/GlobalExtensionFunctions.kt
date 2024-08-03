@@ -15,3 +15,5 @@ fun SavedStateHandle.getPair(key: String): Pair<String, Double> {
 
 fun Double.roundTwoDecimals(): String =
     String.format(Locale.getDefault(), "%.2f", this)
+
+fun String.commasToDots() = replace(",", ".")
