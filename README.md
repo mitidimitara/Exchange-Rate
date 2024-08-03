@@ -4,7 +4,7 @@ Exchange-Rate is an Android application that allows users to fetch and display r
 
 ## Table of Contents
 
-- [Features](#features)
+- [Screens](#screens)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [API Reference](#api-reference)
@@ -13,14 +13,14 @@ Exchange-Rate is an Android application that allows users to fetch and display r
 
 ### 1. Choose Currency Screen
 
-- Choose from two currencies for exchange.
+- Choose from two currencies for exchange (list with all currencies obtained from the API).
 - An input field to add the amount of money.
 - A button to continue.
 
 ### 2. Conversion Screen
 
-- An input field populated with the amount of money (should be editable).
-- A switch/button to change the direction of the currency conversion (e.g., EUR to USD or USD to EUR).
+- An input field populated with the input from the previous screen (editable).
+- A switch button to change the direction of the currency conversion (e.g., EUR to USD or USD to EUR).
 - Display the converted amount.
 - A back button to return to the first screen.
 
